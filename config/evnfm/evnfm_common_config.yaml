@@ -1,0 +1,42 @@
+snmp_server_ip: '10.232.14.60'
+snmp_community: 'public'
+
+#Credentials
+vnfm_user: 'evnfm'
+vnfm_password: 'Ericsson123!'
+
+vnfm_reg_user: 'vnfm-reg'
+vnfm_reg_password: 'Ericsson123!'
+
+gas_user: 'gas-user'
+gas_password: 'Ericsson123!'
+
+system_user: 'dummy'
+system_password: 'Ericsson123!'
+
+helm_auth_user: 'admin'
+helm_auth_pass: 'Ericsson123!'
+
+crd_namespace: 'eric-crd-ns'
+
+# Secrets data
+kc_admin_id: 'admin'
+kc_password: 'Ericsson123!'
+pg_user_id: 'admin'
+pg_password: 'test-pw'
+
+custom_user_id: 'eo_user'
+custom_password: 'postgres'
+super_user_id: 'postgres'
+super_password: 'postgres'
+metrics_user_id: 'exporter'
+metrics_password: 'postgres'
+replica_user_id: 'replica'
+replica_password: 'postgres'
+
+# GR Section
+gr_user: 'gr-user'
+gr_password: 'Ericsson123!'
+
+nels_host_ipv4: 'nelsaas-vnf2-thrift.sero.gic.ericsson.se'
+nels_host_ipv6: 'nelsaas-vnf2-thrift-ipv6.sero.gic.ericsson.se'

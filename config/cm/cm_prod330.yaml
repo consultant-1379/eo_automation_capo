@@ -1,0 +1,26 @@
+# Info about cloud where ECCD is installed
+openstack_auth_url: 'https://cloud11a.athtem.eei.ericsson.se:13000'
+openstack_user: 'ORCH_RV_SMCCD_C11A2_admin'
+openstack_password: 'admin123'
+openstack_project_name: 'ORCH_RV_SMCCD_C11A2'
+
+domain_name: 'ccd-c11a2-prod330.athtem.eei.ericsson.se'
+
+bro_size: '100Gi'
+registry_size: '100Gi'
+
+esa_lb: '10.150.131.131'
+load_balancer_ip: '10.150.131.132'
+
+syslog_ip: '10.232.220.32'
+syslog_port: 6514
+
+director_user: 'eccd'
+
+account: 'upload@ddpeo.athtem.eei.ericsson.se'
+ddpid: 'lmi_eric-eo-cm-prod330'
+enabled: true
+password: '_!upLoad'
+
+container_registry_custom_user_id: admin
+container_registry_custom_pw: admin123

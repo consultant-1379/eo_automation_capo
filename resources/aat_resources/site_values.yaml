@@ -1,0 +1,34 @@
+# Default site_values file for EO test service installation by EO deployment manager
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.global:
+global:
+  ingressClass: "eo_iccr"
+  iccrAppIngresses: true
+  hosts:
+    agatAatAdapter: <replace>
+  registry:
+    url:
+    username: <replace>
+    password: <replace>
+  pullSecret: <replace>
+tags:
+  eoEvnfm: false
+  eoVmvnfm: false
+  eoSo: false
+  eoPf: false
+  eoUds: false
+tls:
+  enabled: true
+  secretName: agat-tls-secret
+ingress:
+  enabled: true
+aat:
+  adapter:
+    host:
+      ip: <replace>
+      protocol: https
+      external_port: 443
+    web:
+      server:
+        context: reports
+        port: 443

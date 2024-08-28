@@ -1,0 +1,33 @@
+# Credentials
+lm_user: 'lm-user'
+lm_password: 'Ericsson123!'
+
+lm_reg_user: 'lm-reg'
+lm_reg_password: 'Ericsson123!'
+
+gas_user: 'gas-user'
+gas_password: 'Ericsson123!'
+
+system_user: 'dummy'
+system_password: 'Ericsson123!'
+
+crd_namespace: 'eric-crd-ns'
+
+# Secrets data
+kc_admin_id: 'admin'
+kc_password: 'Ericsson123!'
+pg_user_id: 'admin'
+pg_password: 'test-pw'
+
+custom_user_id: 'eo_user'
+custom_password: 'postgres'
+super_user_id: 'postgres'
+super_password: 'postgres'
+metrics_user_id: 'exporter'
+metrics_password: 'postgres'
+replica_user_id: 'replica'
+replica_password: 'postgres'
+
+
+nels_host_ipv4: 'nelsaas-vnf2-thrift.sero.gic.ericsson.se'
+nels_host_ipv6: 'nelsaas-vnf2-thrift-ipv6.sero.gic.ericsson.se'

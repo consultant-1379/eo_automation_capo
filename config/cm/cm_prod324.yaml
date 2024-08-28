@@ -1,0 +1,25 @@
+# Info about cloud where ECCD is installed
+openstack_auth_url: 'https://cloud16b.athtem.eei.ericsson.se:13000'
+openstack_user: 'ORCH_RV_GLORY_SMCCD_C16B2_admin'
+openstack_password: 'admin123'
+openstack_project_name: 'ORCH_RV_GLORY_SMCCD_C16B2'
+
+domain_name: 'ccd-c16b2-prod324.athtem.eei.ericsson.se'
+container_registry_custom_user_id: admin
+container_registry_custom_pw: admin123
+
+bro_size: '100Gi'
+registry_size: '100Gi'
+
+esa_lb: '10.150.46.252'
+load_balancer_ip: '10.150.46.251'
+
+syslog_ip: '10.232.220.32'
+syslog_port: 6514
+
+director_user: 'eccd'
+
+account: 'upload@ddpeo.athtem.eei.ericsson.se'
+ddpid: 'lmi_eric-eo-cm-prod324'
+enabled: true
+password: '_!upLoad'

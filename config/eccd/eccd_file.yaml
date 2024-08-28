@@ -1,0 +1,156 @@
+parameters:
+  ################################### Network variables #######################
+  ntp_server_ips: ['159.107.173.3','159.107.173.12']
+  dns_server_ips: ['159.107.173.3','159.107.173.12']
+  os_endpoint_ips: []
+  director_external_network: <replace>
+  director_external_subnet: <replace>
+  security_groups_enabled: False
+  receive_packet_steering: False
+  # The list of remote CIDRs allowed to SSH to directors when SG are enabled
+  #director_ssh_allowed_cidrs: [<fill>]
+  # VRRP traffic might need to be specifically enabled when security groups are
+  # enabled on deployments running Openstack older than Pike release
+  #allow_vrrp_address_by_mac: False
+
+  ### Ingress/egress via LB ###################################################
+  lb_enabled: false
+
+  ##################################### L4LB variables ########################
+
+  ################################### Master variables ########################
+  master_image: <replace>
+  master_flavor: <replace>
+  masters_count: <replace>
+
+  master_root_volume_size: <replace>
+  master_config_volume_size: <replace>
+
+  ################################### Director variables ######################
+  director_image: <replace>
+  director_flavor: <replace>
+  directors_count: <replace>
+
+  director_root_volume_size: <replace>
+  director_config_volume_size: <replace>
+
+  director_virtual_router_id: <replace>
+
+  ansible_variables:
+    openstack_auth_url: <replace>"
+    kube_api_ingress_host: <replace>
+    openstack_username: <replace>
+    openstack_user_password: <replace>
+    openstack_project_name: <replace>
+    openstack_domain_name: "Default"
+    openstack_region: "regionOne"
+    container_registry_storage_size: <replace>
+    container_registry_custom_user_id: "admin"
+    container_registry_custom_pw: "admin123"
+    container_registry_hostname: <replace>
+
+    ################################### ECFE Configuration ####################
+    ecfe_enabled: true
+    ecfe_config_map_peers: []
+#    - peer_address: <replace>
+#      peer_asn: <replace>
+#    - peer_address: <replace>
+#      peer_asn: <replace>
+    ecfe_my_asn: <replace>
+    ecfe_pool_cidrs: []
+#    - <replace>
+
+  ################################### Worker variables ########################
+  node_pools:
+  - name: worker
+    image: <replace>
+    flavor: <replace>
+    count: <replace>
+    root_volume_size: <replace>
+    external_networks:
+    - network: <replace>
+      subnet: <replace>
+      port_extra_properties:
+    #    # security_groups and allowed_address_pairs should not be defined
+    #    # if port_security_enabled is false.
+        port_security_enabled: false
+    #    # To use security_groups, port_security_enabled must be true. Security
+    #    # groups must be specified by UUIDs.
+    #    value_specs:
+    #      security_groups: ["security-group-UUID1", "security-group-UUID2"]
+    #    # allowed_address_pairs is a list of ip addresses or CIDR
+    #    allowed_address_pairs:
+    #      - ip_address: <fill>
+    #labels: ""
+    node_role: "worker"
+    #server_group_policies: ['anti-affinity']
+    #nova_availability_zone: nova
+    #cinder_availability_zone: nova
+    #pre_join_user_script: ""
+    #post_join_user_script: ""
+
+    ################################### Logger variables ########################
+  logger_enabled: False
+
+  ################################### Other variables #########################
+  nova_availability_zone: nova
+  cinder_availability_zone: nova
+
+  ################################## Licensing variables ######################
+  ccd_licensing_domains:
+  - productType: ECCD
+    swltId: eccd-testing
+    customerId: EO-RV
+  ccd_licensing_nels_host: eo-eccd
+
+  ca_cert: |
+    -----BEGIN CERTIFICATE-----
+    MIIDAzCCAeugAwIBAgIJAPt2MB0XyswzMA0GCSqGSIb3DQEBCwUAMBgxFjAUBgNV
+    BAMMDUt1YmVybmV0ZXMtY2EwHhcNMjEwMjA5MTUxNzM4WhcNNDgwNjI3MTUxNzM4
+    WjAYMRYwFAYDVQQDDA1LdWJlcm5ldGVzLWNhMIIBIjANBgkqhkiG9w0BAQEFAAOC
+    AQ8AMIIBCgKCAQEAwt4y4dn/RxPJgULC+JZ3mPJ6ehmvTmWfFZa827TotBb8oebs
+    fJFt+04dtIyb21SOyoquboSQUVZWL5bogpFglqem5nNxo91wZCOaqzaL2X7yA2W2
+    dcwybXHNalb3z9i898cm49zRROym+J0kJPX8QdSOMHxm0seMzidG2RA/OzFhDCHg
+    lLJDsx3F+Vlw8spnAY0UwpLPE7cYoOzdg6WRjIwiL19Oyj+cmieUKUFFE0Wgnu65
+    c+3x98/hxaLIw5eUqbJ5ywUBAeH6YVXHCeT8koxil3UB/LIyY75nNh8GS23tg1w/
+    6RdbckCt9m5kdO2yCrUdF/oNSlWbsvN06IJRNQIDAQABo1AwTjAdBgNVHQ4EFgQU
+    TyXfvUHIhrrC85eZDB7dmTpVRGMwHwYDVR0jBBgwFoAUTyXfvUHIhrrC85eZDB7d
+    mTpVRGMwDAYDVR0TBAUwAwEB/zANBgkqhkiG9w0BAQsFAAOCAQEAHAz3Tagpt2ge
+    SH2ezs5ulrIk2PGifLvzFwucRqhIthIlS3jfDkUdRxT5JChEm8k0dxRkFkXjlKYk
+    bLAXqDNPk1azlNAHsysoRumc+56vu3Q3e1w9I2sxsGxUPiHjl1WNV0Ki+nYe9/O+
+    fE+zpNDh3Yyjq2gZglGDtfYAOVK03rHGcBs6WOIukhSOqUZOOQ2FoBW3PmH3zsx8
+    bCcq7v1We+Up7vn3NheZruv30fy8oW0DF122N0R+ojDgK1gRqlHGIUsVg2jNbF6t
+    GRV7BlvNUTVzVJD9miYLFA68pozjrBEhsp35jtDtnK7o/O3GlS4hTkk3SGmhOFZF
+    q2pzDz5rHQ==
+    -----END CERTIFICATE-----
+
+  ca_key: |
+    -----BEGIN RSA PRIVATE KEY-----
+    MIIEpAIBAAKCAQEAwt4y4dn/RxPJgULC+JZ3mPJ6ehmvTmWfFZa827TotBb8oebs
+    fJFt+04dtIyb21SOyoquboSQUVZWL5bogpFglqem5nNxo91wZCOaqzaL2X7yA2W2
+    dcwybXHNalb3z9i898cm49zRROym+J0kJPX8QdSOMHxm0seMzidG2RA/OzFhDCHg
+    lLJDsx3F+Vlw8spnAY0UwpLPE7cYoOzdg6WRjIwiL19Oyj+cmieUKUFFE0Wgnu65
+    c+3x98/hxaLIw5eUqbJ5ywUBAeH6YVXHCeT8koxil3UB/LIyY75nNh8GS23tg1w/
+    6RdbckCt9m5kdO2yCrUdF/oNSlWbsvN06IJRNQIDAQABAoIBAQCvSoPI6HmbLXCB
+    J1YNmgTBf7Wu6jXpNr6xA+SlWopNnbPpy7mFoKinfDB6flWhKeI8zh106yiLEjf7
+    HSvQcAfL3cnj2YsrFYIJgoGabDnHD0uSxMcqFeJy0wEuHEdVH6l01h/kr3lMH/lf
+    ALRHz0L40MSLVwyDpN/Dfk9b6SKIEiDiz1I2YzEdCvSmYoFjYPspOuyN6LnsXWWQ
+    ZZ9g35sz0w8TCvsUsi72scz0LR0EJp3t4iVhw0xofjhe/RzEmBPBD5Jwr5v/Alcc
+    lECgtKjiYPcEXMRqR3REKlfWWvSsV8OYV4cHfv2u0iVlS8ufEp+F/NmrrQEyDWcf
+    pYBLRKrBAoGBAP7AeySEw8YH1JcoTSOv2SgRIOLAVMJH7EggaM7PwSDVLBXbZt56
+    0N9Wm0oaVjJPG2rpZVCzRpnNEm410LEBH7BVkctFno+KEaslK4Ye+ZsoKzeVctHH
+    U4gJ8Ew6MU/oQNDw2ElCd3HFccbXkp265aGMrXtjYZEzRAtNmVlQleJFAoGBAMPS
+    m/KpOO+AN5w/vrLx0u3N1a/ufv8MKKwc/Zg9HRQU2pMvu4f0zxqa7Xqg62gmi2Sw
+    Fi+IV6AGztW1ciJztudQzMiXjSYX8+z6mwn39EesYqWlS0OO5gM850vAQ6mLpnUD
+    ru9G/a/i+gFE0KEsf0m1w3B+ntjSnbhOnLvwaxoxAoGBAOA93iePFiVCz0cfGofH
+    SoeSTDhMxE8fsETtAlTJW17jRiMXNb2wrhtpyNe5xxYRvDinqZ8Xr5XChe6tQD4O
+    ly5IpEUhyyjeiB72YRF2QpDpEuGik6dEpaqh1PvEXZPRBPzmg/w4nZtwCW7WYyCk
+    W22Qv0RVfpSpY8PvUoTkAothAoGAYKYgJiJzYXHtAIdNvdAxBQHkh9K0h3ke0eP1
+    HiB7q5+nSaHzcuTXGxCASVgHF/5+KhHmwUsPxIHXsA6/6FUoXv64NADov3ZvA/Wk
+    c8UXohBpF8x/Wza6O7rhhbe9LX8phvNscdid+SOTtPCb8BCgOmclsO4txGIfSgoy
+    vWep1OECgYBJ+Qq97FzFZHlm4wKt6LrqCfQZ45fHvHE12LjIjzekSrEeFueHLnEW
+    0eg9q1TeQik5XJpkHIK2AK9EINmuBws+pEFi1EyiBw6oR8zEuwFMCoVtfsVMzdcz
+    JYr2AYUZZkD0f9qIB3HoWVC9bui7iVCP0R73IXwSWQGRCxBSxJuh3w==
+    -----END RSA PRIVATE KEY-----
+
+  public_key: <replace>

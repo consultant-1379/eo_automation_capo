@@ -1,0 +1,45 @@
+# The director IP must be in config for the NFVI environments
+director_ip: 10.150.59.10
+
+# Info about subsystems to be integrated
+ENMs:
+  - "ieatenmc7b16-5.athtem.eei.ericsson.se"
+
+# Info about cloud where ECCD is installed
+openstack_auth_url: 'https://cloud16c.athtem.eei.ericsson.se:13000/v3'
+openstack_user: 'ORCH_STAGING_CCD_C16C029_admin'
+openstack_password: 'admin123'
+openstack_project_name: 'ORCH_STAGING_CCD_C16C029'
+# The following container registry related fields must be in config for the NFVI environments
+container_registry_custom_user_id: admin
+container_registry_custom_pw: admin@123
+
+####################################################################
+# Site values
+iam_hostname: 'keycloak.ccd-c16c029-iccr.athtem.eei.ericsson.se'
+vnfm_hostname: 'vnfm.ccd-c16c029-iccr.athtem.eei.ericsson.se'
+gas_hostname: 'gas.ccd-c16c029-iccr.athtem.eei.ericsson.se'
+
+docker_registry_hostname: 'registry.ccd-c16c029-iccr.athtem.eei.ericsson.se'
+helm_registry_hostname: 'helm-registry.ccd-c16c029-iccr.athtem.eei.ericsson.se'
+enable_smallstack: false
+
+registry_size: '150Gi'
+bro_size: '10Gi'
+
+syslog_ip:
+syslog_port:
+
+load_balancer_ip: '10.150.61.136'
+enm_load_balancer_ip:
+
+storage_class: 'network-file'
+
+enm_scripting_cluster_ip: '10.150.168.213'
+enm_notification_ip: '10.150.168.214'
+enm_username: 'administrator'
+enm_password: 'TestPassw0rd'
+enm_connection_timeout_in_milliseconds: '20000'
+enm_scripting_ssh_port: '22'
+
+director_user: eccd

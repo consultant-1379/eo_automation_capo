@@ -1,0 +1,29 @@
+# General cloud information
+openstack_auth_url: https://cloud13a.athtem.eei.ericsson.se:13000/v3
+openstack_user: ORCH_VNF_C13A16_admin
+openstack_password: admin123
+openstack_project_name: ORCH_VNF_C13A16
+
+# Cluster info
+api_hostname: k8s-api.ccd2.athtem.eei.ericsson.se
+registry_hostname: container.ccd2-c13a16.athtem.eei.ericsson.se
+registry_storage_size: 100Gi
+
+# ECFE info
+peer_address:
+  - 10.150.117.4
+  - 10.150.117.5
+peer-asn: 4247257098
+my-asn: 4247257108
+address-pools:
+  - 10.150.116.36-10.150.116.39
+
+# Networks info
+director_network: 40184eff-e56d-4c25-95ed-98cb22922f3a
+director_subnet: fc88c85a-8473-4afc-8098-d5d86d503aa3
+director_virtual_router_id: 56
+worker_network: 40184eff-e56d-4c25-95ed-98cb22922f3a
+worker_subnet: fc88c85a-8473-4afc-8098-d5d86d503aa3
+
+# Public key for passwordless access
+public_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCk+/QK64kR5z/lFhcwSdxy81MDjw0iYXbnN/Ye5gevSpeFIOi1rluPzmDP7U1WLXZ4n700tLslqB8AQx2Y7tSK2krTkOAfeRdpuhiKSU6pkcNRFiR5iXWr9jNSQxWvHCGJDW1UDL9EJl2pckgI/Pw7ZXCqoPD/uXhd/c381NdhlC92xUt8HqtFMTwZB3RnALe/FbQ4HsmPIEQisZSP+43mIuBYi0M2agmI9LlL9hZY/zRYK9vW4Pz5/GojTp60hjlAFve2KFucECJF3uOaK6DefQe6dd/ehzwlvuBZ2l3iVbAZBxX3fZReQn0uEJpT1NRcUyZLbbvs/em04kHDVt03 Generated-by-Nova

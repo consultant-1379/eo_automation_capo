@@ -1,0 +1,27 @@
+# General cloud information
+openstack_auth_url: https://cloud13a.athtem.eei.ericsson.se:13000/v3
+openstack_username: ORCH_RV_C13A3_admin
+openstack_user_password: admin123
+openstack_project_name: ORCH_RV_C13A3
+api_hostname: api.orch-rv-c13a3.athtem.eei.ericsson.se
+registry_hostname: container.orch-rv-c13a3.athtem.eei.ericsson.se
+registry_storage_size: 100Gi
+
+# ECFE info
+peer_address:
+  - 10.150.117.4
+  - 10.150.117.5
+peer-asn: 4247257098
+my-asn: 4247257108
+address-pools:
+  - 10.150.116.43-10.150.116.46
+
+# Network information
+director_network: 40184eff-e56d-4c25-95ed-98cb22922f3a
+director_subnet: fc88c85a-8473-4afc-8098-d5d86d503aa3
+director_virtual_router_id: 163
+worker_network: 40184eff-e56d-4c25-95ed-98cb22922f3a
+worker_subnet: fc88c85a-8473-4afc-8098-d5d86d503aa3
+
+# Public key for passwordless access
+public_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDEV0zhWNbXbuWUwpfVCgWPxz4hCidyyZXtIoZAlYej0CBeVtFF6XCDclx7Uu+GGXBGZwHn0gKKlZoxpvgLVLXibX3XYVmwkhpkoYz8gK9Aiopv/T+MWNVl9LZmDug0hkB4bAG2uMHNTSvboITzmR+Wpq1/SglW/W36xRf1/JzlvO45zl4LLpmslDDH3riv3AikyWglFuX4GvWzUgtMID+HBjUVr+M5zpZoKELC07lV73X8v4WuXS1eja+ticxuw/wtCrwI28IjhgLRfoMotpOUUB1Jwss0tsZNhzOxKGAMsK0Ccw4UF+tmNSZRCyLunggZXG5wMiC5/e47YuEkZTnh ansible-generated on ecm157x154.ete.ka.sw.ericsson.se

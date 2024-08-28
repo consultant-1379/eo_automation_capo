@@ -1,0 +1,33 @@
+# Info about subsystems to be integrated
+ENMs:
+  - "ieatenmc12a02-5.athtem.eei.ericsson.se"
+
+# Info about cloud where ECCD is installed
+openstack_auth_url: 'https://cloud15a.athtem.eei.ericsson.se:13000/v3'
+openstack_user: 'ORCH_RV_C15A1_admin'
+openstack_password: 'admin123'
+openstack_project_name: 'ORCH_RV_C15A1'
+
+####################################################################
+# Site values
+iam_hostname: 'iam.fullstack3.athtem.eei.ericsson.se'
+vnfm_hostname: 'evnfm.fullstack3.athtem.eei.ericsson.se'
+gas_hostname: 'gas.fullstack3.athtem.eei.ericsson.se'
+
+docker_registry_hostname: 'registry.evnfm.fullstack3.athtem.eei.ericsson.se'
+helm_registry_hostname: 'helm.evnfm.fullstack3.athtem.eei.ericsson.se'
+enable_smallstack: false
+
+registry_size: '100Gi'
+bro_size: '30Gi'
+
+load_balancer_ip: '10.150.139.189'
+
+enm_scripting_cluster_ip: '131.160.205.16'
+enm_notification_ip: '131.160.205.21'
+enm_username: 'administrator'
+enm_password: 'TestPassw0rd'
+enm_connection_timeout_in_milliseconds: '20000'
+enm_scripting_ssh_port: '22'
+
+director_user: eccd

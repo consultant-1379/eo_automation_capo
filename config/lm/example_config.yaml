@@ -1,0 +1,27 @@
+# The director IP must be in config for the NFVI environments
+director_ip: ''
+
+# Info about cloud where ECCD is installed
+openstack_auth_url: ''
+openstack_user: ''
+openstack_password: ''
+openstack_project_name: ''
+
+# The following container registry related fields must be in config for the NFVI environments
+container_registry_custom_user_id: ''
+container_registry_custom_pw: ''
+
+####################################################################
+# Site values
+iam_hostname: ''
+gas_hostname: ''
+lm_hostname: ''
+git_hostname: ''
+
+load_balancer_ip: ''
+registry_size: '10Gi'
+
+director_user: eccd
+
+# Mark if LM is installed in the same cluster where other EO products are present
+is_collocated_env: False

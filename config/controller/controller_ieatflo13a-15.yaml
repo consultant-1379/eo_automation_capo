@@ -1,0 +1,4 @@
+# The server that is using to connect to a director VM (DO NOT CHANGE)
+host: 'ieatflo13a-15.athtem.eei.ericsson.se'
+user: 'root'
+password: 'ecm123'

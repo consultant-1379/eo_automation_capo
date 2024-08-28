@@ -1,0 +1,41 @@
+# Info about cloud where ECCD is installed
+openstack_auth_url:
+openstack_user:
+openstack_password:
+openstack_project_name:
+
+# If no cloud info provided - director IP address is mandatory
+director_ip:
+container_registry_custom_user_id:
+container_registry_custom_pw:
+
+# cCM domain name (the part <cluster_name>-<prod_name>.....>)
+domain_name:
+
+# Specify the size for BRO
+bro_size:
+
+# Specify size for Object Storage PVC
+registry_size:
+
+# IPs for ESA LB and EDA2 - like in CI hosts file
+esa_lb:
+load_balancer_ip:
+
+# IPs and port for custom SYSLOG server
+syslog_ip:
+syslog_port:
+
+# User to connect to the director VM
+director_user:
+
+#DDP data in site values
+account: 'user@sftp.server.customer.net'
+ddpid: 'customerEO-city'
+enabled: true
+password: '&432jkflnn32Hjdke'
+
+# Parameter for cCM installed with EVNFM on the same cluster
+is_collocated_env: False
+
+send_snmp_alarm: false

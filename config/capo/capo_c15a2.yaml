@@ -1,0 +1,26 @@
+# Openstack info
+openstack_auth_url: https://cloud15a.athtem.eei.ericsson.se:13000/v3
+openstack_user: ORCH_RV_SMCCD_C15A2_admin
+openstack_password: admin123
+openstack_project_name: ORCH_RV_SMCCD_C15A2
+openstack_project_id: 3cce88af0f1d4740b8451c0ffab36b37
+
+# Cluster info
+api_hostname: api.ccd-c15a2.athtem.eei.ericsson.se
+registry_hostname: container.ccd-c15a2.athtem.eei.ericsson.se
+registry_storage_size: 100Gi
+
+# ECFE info
+peer_address:
+  - 10.150.167.4
+  - 10.150.167.5
+peer-asn: 4247257098
+my-asn: 4247257108
+address-pools:
+  - 10.150.139.223-10.150.139.226
+
+# Networks info
+cp_network: p0-opstk-15a-de-cni-ggn4
+cp_subnet: p0-opstk-15a-de-cni-ggn4_ipv4
+worker_network: p0-opstk-15a-de-cni-ggn4
+public_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDEV0zhWNbXbuWUwpfVCgWPxz4hCidyyZXtIoZAlYej0CBeVtFF6XCDclx7Uu+GGXBGZwHn0gKKlZoxpvgLVLXibX3XYVmwkhpkoYz8gK9Aiopv/T+MWNVl9LZmDug0hkB4bAG2uMHNTSvboITzmR+Wpq1/SglW/W36xRf1/JzlvO45zl4LLpmslDDH3riv3AikyWglFuX4GvWzUgtMID+HBjUVr+M5zpZoKELC07lV73X8v4WuXS1eja+ticxuw/wtCrwI28IjhgLRfoMotpOUUB1Jwss0tsZNhzOxKGAMsK0Ccw4UF+tmNSZRCyLunggZXG5wMiC5/e47YuEkZTnh ansible-generated on ecm157x154.ete.ka.sw.ericsson.se

@@ -1,0 +1,56 @@
+# The director IP must be in config for the NFVI environments
+director_ip: 10.232.221.39
+
+# Info about subsystems to be integrated
+ENMs:
+  - "ieatenmc7b16-5.athtem.eei.ericsson.se"
+
+# Info about cloud where ECCD is installed
+openstack_auth_url: ''
+openstack_user: ''
+openstack_password: ''
+openstack_project_name: ''
+# The following container registry related fields must be in config for the NFVI environments
+container_registry_custom_user_id: admin
+container_registry_custom_pw: admin@123
+
+####################################################################
+# Site values
+iam_hostname: 'iam.c16a033.athtem.eei.ericsson.se'
+vnfm_hostname: 'evnfm.c16a033.athtem.eei.ericsson.se'
+gas_hostname: 'gas.c16a033.athtem.eei.ericsson.se'
+
+docker_registry_hostname: 'reg-evnfm.c16a033.athtem.eei.ericsson.se'
+helm_registry_hostname: 'helm.c16a033.athtem.eei.ericsson.se'
+enable_smallstack: false
+
+registry_size: '450Gi'
+bro_size: '450Gi'
+
+syslog_ip: '10.216.249.116'
+syslog_port: 6514
+
+snmp_server_ip: '10.232.14.60'
+snmp_community: 'public'
+
+load_balancer_ip: '10.232.218.229'
+
+vnfm_user: 'vnfm'
+
+storage_class: 'network-file'
+
+enm_scripting_cluster_ip: '10.150.168.213'
+enm_notification_ip: '10.150.168.214'
+enm_username: 'administrator'
+enm_password: 'TestPassw0rd'
+enm_connection_timeout_in_milliseconds: '20000'
+enm_scripting_ssh_port: '22'
+
+director_user: eccd
+
+# GR Section
+gr_hostname: 'gr.c16a033.athtem.eei.ericsson.se'
+secondary_hostname: 'gr.c16c022.athtem.eei.ericsson.se'
+sftp_url: '10.150.61.28:22/eso/eo-gr/c16a033_c16a022'
+sftp_name: 'ericsson'
+sftp_password: 'ericsson'

@@ -1,0 +1,251 @@
+infra:
+  audit:
+    log_level: detailed
+################################### Infrastructure variables #######################
+  iaas:
+    type: capo
+    nameservers:
+      - 159.107.173.3
+      - 159.107.173.12
+    ntp_servers:
+      - 159.107.173.3
+      - 159.107.173.12
+    ntp_parameters:
+      ntp_minpoll: 3
+      ntp_maxpoll: 8
+      ntp_version: 4
+      ntp_max_offset: "1.2"
+    timezone: "Europe/Dublin"
+################################### Cloud variables #######################
+    capo:
+      instance_create_timeout: 180
+      clouds:
+        cloud:
+          auth:
+            auth_url: <replace>
+            username: <replace>
+            password: <replace>
+            project_id: <replace>
+            project_domain_name: Default
+            user_domain_name: Default
+          regions:
+            - name: regionOne
+      target_cloud: cloud
+      target_cloud_cacert: <replace>
+
+################################### network variables #######################
+      oam_network:
+        name: <replace>
+        subnets:
+          - <replace>
+      internal_network:
+        subnet_ipv4:
+          cidr: "10.0.0.0/24"
+      election_network:
+        subnet_ipv4:
+          cidr: "20.0.0.0/24"
+      node_image:
+        name: <replace>
+  console_password_hash: "$6$ccdTestSalt$m3GxI5wbeH4TlQdMCbDh.lzqugYXBHFKVv/yk5S3paeGWmCC/S.YQ4h0I4du5wJchJi/PirdtI.OjQlIgTudk1"
+
+################################### Ephemeral node variables ########################
+  bootstrap:
+    authorized_keys:
+      - <replace>
+    capo:
+      ephemeral_root_volume:
+        size: 30
+      ephemeral_flavor: <replace>
+      ephemeral_image:
+        name: <replace>
+      ephemeral_availability_zone: "nova"
+
+################################### Control plane nodes variables #######################
+  controlplane:
+    control_plane_external_vip:
+    control_plane_internal_vip: 10.0.0.2
+    control_plane_registry_vip: 10.0.0.3
+    control_plane_port: 6443
+    pool_cfg:
+      name: cp
+      count: 3
+      capo:
+        flavor: <replace>
+        root_volume:
+          size: <replace>
+        availability_zones:
+          - nova
+      machine_health_check:
+        max_unhealthy: 80%
+        node_startup_timeout: 15m
+        timeout: 5m
+        unhealthy_range: "[0-10]"
+      authorized_keys:
+        - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDEV0zhWNbXbuWUwpfVCgWPxz4hCidyyZXtIoZAlYej0CBeVtFF6XCDclx7Uu+GGXBGZwHn0gKKlZoxpvgLVLXibX3XYVmwkhpkoYz8gK9Aiopv/T+MWNVl9LZmDug0hkB4bAG2uMHNTSvboITzmR+Wpq1/SglW/W36xRf1/JzlvO45zl4LLpmslDDH3riv3AikyWglFuX4GvWzUgtMID+HBjUVr+M5zpZoKELC07lV73X8v4WuXS1eja+ticxuw/wtCrwI28IjhgLRfoMotpOUUB1Jwss0tsZNhzOxKGAMsK0Ccw4UF+tmNSZRCyLunggZXG5wMiC5/e47YuEkZTnh ansible-generated on ecm157x154.ete.ka.sw.ericsson.se
+
+################################### Worker nodes variables #######################
+  worker_pools:
+    - pool_cfg:
+        name: worker
+        max_pods_per_node: 120
+        count: <replace>
+        capo:
+          flavor: <replace>
+          root_volume:
+            size: <replace>
+          availability_zones:
+            - nova
+          traffic_networks:
+            - network: <replace>
+              enable_port_security: false
+        machine_health_check:
+          max_unhealthy: 80%
+          node_startup_timeout: 15m
+          timeout: 5m
+          unhealthy_range: "[0-10]"
+
+################################### kubernetes variables ########################
+kubernetes:
+  ip_version: 4
+  ingress_cluster_ip: 10.96.255.250
+  apiserver_extra_sans:
+    - <replace>
+  pod_cidr_blocks:
+    - 10.10.0.0/16
+  ca_cert: |
+    -----BEGIN CERTIFICATE-----
+    MIIDBTCCAe2gAwIBAgIJALX2m7S0V5JxMA0GCSqGSIb3DQEBCwUAMBgxFjAUBgNV
+    BAMMDUt1YmVybmV0ZXMtY2EwIBcNMjMwNDIwMTMzNjM5WhgPMjA1MDA5MDUxMzM2
+    MzlaMBgxFjAUBgNVBAMMDUt1YmVybmV0ZXMtY2EwggEiMA0GCSqGSIb3DQEBAQUA
+    A4IBDwAwggEKAoIBAQCW1jlbDxTR5fYBvlAgabtS10+FL/uiOJt6Ba06QzggxiCN
+    Ei4G8Dg1cmNvqY3vh3vaaO+VIeNeL3MJz8lKSfEMlTcmd7Kqa+ChSI7ZgdWSQ4D4
+    aPC3ZSk0FEgUTc3nl7Zw+smb5oim8WzjaEGBcgfvYPBZ7LNHgFN2M6itipG0lo9/
+    JDeyfrrgeEcZqG0bk+GnhrkRtiUwwB9fLSkoManI+U9qAQp1l6iN7pNXLjW6AMYl
+    Vc9yjdCy99Gsrh8i9Ghq2Q196CNFWGdZ0gchDYKmPLZvE7qwqrMCryNTR1JSrwkL
+    P1Ve7hcimqDkw56LwKm1DnrAFRPXLd9fJmityK/VAgMBAAGjUDBOMB0GA1UdDgQW
+    BBSZ9VQ0/uTNSIqPx+g4DJ7hlioGfDAfBgNVHSMEGDAWgBSZ9VQ0/uTNSIqPx+g4
+    DJ7hlioGfDAMBgNVHRMEBTADAQH/MA0GCSqGSIb3DQEBCwUAA4IBAQBXcSV6WJUy
+    6HZwcZcQ27Lk0jA0zAdIBz1xvx0O+lb65rPn2L8nZAdzHcX4MqZuqJy9/KMmioVq
+    i+ojkwGcJNBuieS9v+2lXGaGRAVJUN9ag8+4DAkhofuVTYIfDxL6p2ecgePldU1x
+    maXRUSQ8+hB+CesHetvOG5RO6P4Fv8DIe4zSD71rKV94Iqay9adMUDMPZbsUlD0I
+    2eb5lNZlrUhQ7t7aXxbcfFlpRBdgOGALLzJRmeSCrTSHhYHCNgBvWCOPyhlLC3M6
+    dztw8Ce56Jbjk9xo2fMpB+Z74Q3n6knWjcIcMPBby7bVceYhm2PBQseLvnfCr87W
+    00xbRBXqMiSg
+    -----END CERTIFICATE-----
+
+  ca_key: |
+    -----BEGIN RSA PRIVATE KEY-----
+    MIIEogIBAAKCAQEAltY5Ww8U0eX2Ab5QIGm7UtdPhS/7ojibegWtOkM4IMYgjRIu
+    BvA4NXJjb6mN74d72mjvlSHjXi9zCc/JSknxDJU3JneyqmvgoUiO2YHVkkOA+Gjw
+    t2UpNBRIFE3N55e2cPrJm+aIpvFs42hBgXIH72DwWeyzR4BTdjOorYqRtJaPfyQ3
+    sn664HhHGahtG5Php4a5EbYlMMAfXy0pKDGpyPlPagEKdZeoje6TVy41ugDGJVXP
+    co3QsvfRrK4fIvRoatkNfegjRVhnWdIHIQ2Cpjy2bxO6sKqzAq8jU0dSUq8JCz9V
+    Xu4XIpqg5MOei8CptQ56wBUT1y3fXyZorciv1QIDAQABAoIBACdy14VNKHDM584E
+    7AfOH0PHM/DtX65Jh8AeA/Qc6G0J5DGA87C02r5/sCnf+lMO6AFzOFWUi1Zyqm+C
+    fG6FcBmOXOIepAeWNyV3SITyQ90A8pYFPA960Y/hTgihYJyVPQ3HSTsQy+R9d7Dx
+    70/fdtvQSov6L9kfYrSjRhY9C2ZjI1IRW1YHROWT0qOkwmhS9ANziZ7n4mPeo8Sv
+    z67GwZNaouJ0CvOV3g62h5BaUK4Nxc9IviWoCBk8EVQH0WSLYH3RcvE9Jv7g+D/p
+    +Po+dUUoQMO9NJ4U9fNCcI20IbL1PPF8f5ize0veL+Tml3DBexfEvdSsWPJo8NqT
+    iSHocvECgYEAxk3EMWSZllMhBDxy1eqxEc2jJa5deatXftd8nhnOW9Kj5CilxE3C
+    qc6sBhIIUyf4D17u7E/gELEaJ9t3XB3L+zpOHPaS8ok5NvQziuNv9lSJ89xVqiwW
+    kGiRntSmZjG8Pr8aJwTOf+aOUUHHc5twPfjt40b+X+JdM07DhWu0tG8CgYEAwrj7
+    dKjJFFlae+1KDUmKJdh2OsCVSkNB6zgeKqbQ/Os331H7L5QDzy7Ku4cyLT557fZH
+    JGYn9WYc1V5exL9Od6/EV20ao3EGaJoo9PqIOh48jyJlR9nPCqREDgWEys44Rezk
+    lRez36c0lOSLyRbGaoV29OPv2HpfeDbLnz+qKfsCgYApah5aTm9BFNVlZBZ7lIss
+    c6zp9rNw8JbSV8Cf6DXPuXse8FpGWBMakZ4dmnCApW1KEIKHedsKwWH8Bvqzk0mB
+    i1i69cgUvRHk5zVIgV1lrZwuAMsnQhPoTt5ytGiYGTT+Sbz1fyx9S7JXSAyWmVTk
+    rHNKLw57CfR6/a0Z1TelIwKBgCLaHReqRiNAQvO/auup5/ISJkcpxQ6/rwK8zplv
+    tiQurZdpAv5nDa99fofGEPMMJaKz29Pl/OztU+fUtj2cyByf9xJ20rfCORVr0jzW
+    wp80Xj54N4x+rZIICK5BypzKAERzvA37ahRzxvOHXIWnb+gM71exnHIwpPnNRPDB
+    4mEVAoGAZNnbjsCF3KMfOVZExRk8Gw7x2p2ydekegEq1iaOuKgLUpYkcurDm/TZR
+    xvqRZxirlgo7cxya9BOrvGM5PIeAN08wrK5oIncE7rCF2pKIkv0YOmFs3zfB00Og
+    OsKkFm2ynBHx4NzvqfDzZNBVYQr6L099LCiMWmg/lS+IKYVk38Q=
+    -----END RSA PRIVATE KEY-----
+
+  ipvs_excluded_cidrs:
+    - 3.3.3.0/24
+    - 7.7.7.0/24
+  featuregates:
+    bound_service_account_token_volume: false
+  etcd_config:
+    election_timeout: 3001
+    heartbeat_interval: 301
+    snapshot_count: 100001
+  graceful_node_shutdown:
+    shutdown_grace_period: 3m
+    shutdown_grace_period_critical_pods: 30s
+license:
+  nels_host: 'de-cni-eccd'
+  licensing_domains:
+    - customer_id: 'DE-CNI'
+      product_type: 'ECCD'
+      swlt_id: 'de-cni-eccd-testing'
+value_packs: [ ]
+################################### registry storage ecfe variables #######################
+addons:
+  - name: calico
+    spec:
+      mtu: 1500
+      interface_name: _calico_interface
+  - name: cr-registry
+    spec:
+      storage_class: network-block
+      hostname: <replace>
+      user_id: admin
+      password: YWRtaW4xMjM=
+      storage_size: <replace>
+      replicas_count: 1
+  - name: ingress
+    spec:
+  - name: metrics-server
+    spec: { }
+  - name: multus
+    spec: { }
+  - name: pm
+    spec: { }
+  - name: ecfe
+    spec:
+      speakers_allowed_on_control_plane: false #added for our internal tests
+      allocate_speakers: true
+      enable_guaranteed_qos: false
+      ecfe_enabled: true
+      config: |
+        bgp-peers:
+        - peer-address: 10.150.132.4
+          peer-asn: 4247257098
+          my-asn: 4247257108        
+        - peer-address: 10.150.132.5
+          peer-asn: 4247257098
+          my-asn: 4247257108
+          hold-time: 3s
+          my-address-pools:
+          - metallb-config
+        address-pools:
+        - name: metallb-config
+          protocol: bgp
+          addresses:    
+          - <replace>
+  - name: openstack-cloud-controller-manager
+    spec:
+  - name: openstack-cinder
+    spec:
+      storage_classes:
+      - name: network-block
+        default: true
+        spec:
+          reclaim_policy: Delete
+          cinder_availability_zone: nova
+  - name: subport_controller_manager
+    spec: {}
+  - name: ccd-licensing
+    spec:
+      worker_pool_name: worker
+      ccd_licensing_nels_port: 9099
+      db_ha_disabled: False
+      ccd_app_sys_info:
+         nels:
+            host_ip: 192.168.0.1
+            host_name: dummy.nels.com
+            port: 9099
+            report_interval: 4
+            tls_enable: False

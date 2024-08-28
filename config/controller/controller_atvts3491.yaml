@@ -1,0 +1,4 @@
+# The server that is using to connect to a director VM (DO NOT CHANGE)
+host: 'atvts3491.athtem.eei.ericsson.se'
+user: 'root'
+password: 'shroot'

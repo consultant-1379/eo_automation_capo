@@ -1,0 +1,28 @@
+# Info about cloud where ECCD is installed
+openstack_auth_url:
+openstack_user:
+openstack_password:
+openstack_project_name:
+
+# If no cloud info provided - director IP address is mandatory
+director_ip: '10.237.32.248'
+
+domain_name: 'rv-24573-prod349.flexilab.sero.gic.ericsson.se'
+container_registry_custom_user_id: admin
+container_registry_custom_pw: admin
+
+bro_size: '100Gi'
+registry_size: '100Gi'
+
+esa_lb: '10.237.34.99'
+load_balancer_ip: '10.237.34.98'
+
+syslog_ip: '10.232.220.32'
+syslog_port: 6514
+
+director_user: 'zeyshve'
+
+account: 'upload@ddpeo.athtem.eei.ericsson.se'
+ddpid: 'lmi_eric-eo-cm-prod349'
+enabled: true
+password: '_!upLoad'

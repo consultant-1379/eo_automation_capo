@@ -1,0 +1,28 @@
+# General cloud information
+openstack_auth_url: https://cloud15a.athtem.eei.ericsson.se/
+openstack_user: ORCH_PS_CCD_C15A006_admin
+openstack_password: admin123
+openstack_project_name: ORCH_PS_CCD_C15A006
+
+# Cluster info
+api_hostname: api.ccd-c15a006.athtem.eei.ericsson.se
+registry_hostname: registry.ccd-c15a006.athtem.eei.ericsson.se
+registry_storage_size: 64Gi
+
+# ECFE info
+peer_address:
+peer-asn:
+my-asn:
+address-pools:
+  - 10.150.139.140
+  - 10.150.139.168-10.150.139.177
+
+# Networks info
+director_network:
+director_subnet:
+director_virtual_router_id:
+worker_network:
+worker_subnet:
+
+# Public key for passwordless access
+public_key:

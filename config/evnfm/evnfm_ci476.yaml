@@ -1,0 +1,47 @@
+# Info about subsystems to be integrated
+ENMs:
+  - "ieatenmc7b16-5.athtem.eei.ericsson.se"
+
+# Info about cloud where ECCD is installed
+openstack_auth_url: 'https://cloud15a.athtem.eei.ericsson.se:13000/'
+openstack_user: 'ORCH_RV_Huracan_SMCCD_C15A7_admin'
+openstack_password: 'admin123'
+openstack_project_name: 'ORCH_RV_Huracan_SMCCD_C15A7'
+container_registry_custom_user_id: admin
+container_registry_custom_pw: admin123
+
+# Site values
+iam_hostname: 'iam.ccd-c15a7.athtem.eei.ericsson.se'
+vnfm_hostname: 'evnfm.ccd-c15a7.athtem.eei.ericsson.se'
+
+vnfm_user: 'vnfm'
+
+docker_registry_hostname: 'registry.ccd-c15a7.athtem.eei.ericsson.se'
+helm_registry_hostname: 'helm.ccd-c15a7.athtem.eei.ericsson.se'
+gas_hostname: 'gas.ccd-c15a7.athtem.eei.ericsson.se'
+enable_smallstack: false
+
+registry_size: '40Gi'
+bro_size: '10Gi'
+
+load_balancer_ip: '10.150.173.87'
+
+enm_scripting_cluster_ip: '10.150.168.213'
+enm_notification_ip: '10.150.168.214'
+enm_username: 'administrator'
+enm_password: 'TestPassw0rd'
+enm_connection_timeout_in_milliseconds: '20000'
+enm_scripting_ssh_port: '22'
+storage_class: 'network-file'
+
+# AAT Test Service
+aat_hostname: 'fts.ccd-c15a7.athtem.eei.ericsson.se'
+
+director_user: eccd
+
+# GR Section
+gr_hostname: 'gr.ccd-c15a7.athtem.eei.ericsson.se'
+secondary_hostname: 'gr.c11a3.athtem.eei.ericsson.se'
+sftp_url: '10.32.187.58:22/eso/eo-gr/ci476_ci480'
+sftp_name: 'ericsson'
+sftp_password: 'ericsson'

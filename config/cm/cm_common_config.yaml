@@ -1,0 +1,86 @@
+snmp_server_ip: '10.232.14.60'
+snmp_community: 'public'
+
+external_traffic_policy: 'Cluster'
+
+system_user: 'dummy'
+system_password: 'Ericsson123!'
+
+gas_user: 'gas-user'
+gas_password: 'Ericsson123!'
+
+eo_cm_user: 'ecmadmin'
+eo_cm_password: 'CloudAdmin_123'
+
+cluster_name: 'eo-cm-eda'
+
+eric_eo_cm_broker_password: 'ecmNotif!23'
+
+eric_eo_cm_dbpassword: 'Edb_12St'
+eric_eo_cm_superpwd: 'Edb_12St'
+db_cmdb_pass: 'uAPTZQ7+9n49Zb'
+db_ecm_pass: '7P+yb6QCpD7ycy'
+db_actprovadapter_pass: 'p$xJcTLP1ttmJmwG'
+db_eda_pass: '95ja7MPfs0z0G#pl'
+
+eric_eo_cm_ns_lcm_db_password: 'feq9Re*5jnRLDw'
+eric_eo_cm_ns_lcm_db_superpwd: 'feq9Re*5jnRLDw'
+
+eric_eo_cm_cust_wf_db_password: 'feq9Re*5jnRLDw'
+eric_eo_cm_cust_wf_db_superpwd: 'feq9Re*5jnRLDw'
+
+eric_eo_cm_order_mgmt_ca_db_password: 'Mnr_EXDg6SHCH'
+eric_eo_cm_order_mgmt_ca_db_superpwd: 'Mnr_EXDg6SHCH'
+
+onboard_password: 'eoAdmin2021_'
+eoadmin_password: 'eoAdmin2021_'
+admin_password: 'F5_dm!N20_CM$'
+ecmadmin_password: 'F5_dm!N20_CM$'
+ecm_act_password: 'emaEcm!23'
+scm_client_id: 'bdc5b0f0-f84e-11ec-9a17-6bce09b90da5'
+scm_client_secret: 'ac1e5d3b-4c68-4f19-bcdd-09a31899aac4'
+
+toscaocm_password: 'feq9Re*5jnRLDw'
+toscaocm_superpwd: 'feq9Re*5jnRLDw'
+
+license_consumer_db_password: 'LicenseDb_123'
+license_consumer_db_superpwd: 'LicenseDb!23'
+
+cmdb_sync_pass: 'Y7$Cnv!WNZcknp=x'
+
+cs_am_config_pass: 'ksd_ep32K!frE3'
+cs_ds_pass: 'je93K!dJE83gD8'
+cs_monitor_pass: '2rPV5!ed3!tfC5'
+
+cts_ds_pass: 'Xh$T_2skmN349C'
+cts_monitor_pass: 'Li2sNM_m!VSAR1'
+cts_openam_pass: 'Ri6gNg3m_VSpa1'
+
+ecm_admin_pass: 'CloudAdmin123'
+
+us_ds_pass: 'USidkm9!i392ds'
+us_monitor_pass: 'PM!lo_eor43Ore'
+
+am_password: 'Ericsson123!'
+
+crd_namespace: 'eric-crd-ns'
+
+capi_wl_namespace: 'capi-ns'
+
+# Secrets data
+kc_admin_id: 'admin'
+kc_password: 'Ericsson123!'
+pg_user_id: 'admin'
+pg_password: 'test-pw'
+
+custom_user_id: 'eo_user'
+custom_password: 'postgres'
+super_user_id: 'postgres'
+super_password: 'postgres'
+metrics_user_id: 'exporter'
+metrics_password: 'postgres'
+replica_user_id: 'replica'
+replica_password: 'postgres'
+
+nels_host_ipv4: 'nelsaas-vnf2-thrift.sero.gic.ericsson.se'
+nels_host_ipv6: 'nelsaas-vnf2-thrift-ipv6.sero.gic.ericsson.se'

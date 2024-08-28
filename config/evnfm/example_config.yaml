@@ -1,0 +1,60 @@
+# ANNOTATION
+# Please, populate this config with values that should be used during EO components installation
+# Please name the file following the next pattern - evnfm_<env-name>.yaml
+# The <env-name> should be provided as EO environment name in Jenkins Job.
+# The <env_name> should be the same for ssh key name and for folder with certs.
+
+# The director IP must be in config for the NFVI environments
+director_ip:
+
+# Info about subsystems to be integrated
+ENMs:
+  - ""
+
+# Info about cloud where ECCD is installed
+openstack_auth_url: ''
+openstack_user: ''
+openstack_password: ''
+openstack_project_name: ''
+
+container_registry_custom_user_id:
+container_registry_custom_pw:
+
+####################################################################
+# Site values
+iam_hostname: ''
+vnfm_hostname: ''
+gas_hostname: ''
+
+docker_registry_hostname: ''
+helm_registry_hostname: ''
+enable_smallstack: false
+
+registry_size: '100Gi'
+bro_size: '20Gi'
+
+load_balancer_ip: ''
+
+storage_class: ''
+
+enm_scripting_cluster_ip: ''
+enm_notification_ip: ''
+enm_username: ''
+enm_password: ''
+enm_connection_timeout_in_milliseconds: '20000'
+enm_scripting_ssh_port: '22'
+
+####################################################################
+director_user: eccd
+is_collocated_env: false
+
+send_snmp_alarm: false
+
+####################################################################
+
+# GR Section
+gr_hostname: ''
+secondary_hostname: ''
+sftp_url: ''
+sftp_name: ''
+sftp_password: ''

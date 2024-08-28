@@ -1,0 +1,26 @@
+# The director IP must be in config for the NFVI environments
+director_ip: 10.150.45.92
+
+# Info about cloud where ECCD is installed
+openstack_auth_url: ''
+openstack_user: ''
+openstack_password: ''
+openstack_project_name: ''
+# The following container registry related fields must be in config for the NFVI environments
+container_registry_custom_user_id: admin
+container_registry_custom_pw: nebula123
+
+####################################################################
+# Site values
+iam_hostname: 'iam-c16b033-1.athtem.eei.ericsson.se'
+gas_hostname: 'gas-c16b033-1.athtem.eei.ericsson.se'
+lm_hostname: 'lm-c16b033-1.athtem.eei.ericsson.se'
+git_hostname: 'git-c16b033-1.athtem.eei.ericsson.se'
+oci_hostname: 'oci-c16b033-1.athtem.eei.ericsson.se'
+
+registry_size: '10Gi'
+load_balancer_ip: '10.150.46.18'
+
+director_user: eccd
+
+is_collocated_env: True

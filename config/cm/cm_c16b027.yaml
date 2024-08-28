@@ -1,0 +1,37 @@
+# Info about cloud where ECCD is installed
+openstack_auth_url: 'https://cloud16b.athtem.eei.ericsson.se:13000/v3'
+openstack_user: 'ORCH_STAGING_CCD_C16B027_admin'
+openstack_password: 'admin123'
+openstack_project_name: 'ORCH_STAGING_CCD_C16B027'
+
+# If no cloud info provided - director IP address is mandatory
+director_ip:
+container_registry_custom_user_id: admin
+container_registry_custom_pw: admin@123
+
+# cCM domain name (the part <cluster_name>-<prod_name>.....>)
+domain_name: ccd-c16b027-iccr.athtem.eei.ericsson.se
+
+# Specify the size for BRO
+bro_size:
+registry_size: '100Gi'
+
+# IPs for ESA LB and EDA2 - like in CI hosts file
+esa_lb: 10.150.46.183
+load_balancer_ip: 10.150.46.182
+
+# IPs and port for custom SYSLOG server
+syslog_ip:
+syslog_port:
+
+# User to connect to the director VM
+director_user: eccd
+
+#DDP data in site values
+account: 
+ddpid: 
+enabled:
+password:
+
+# Parameter for cCM installed with EVNFM on the same cluster
+# is_collocated_env: True

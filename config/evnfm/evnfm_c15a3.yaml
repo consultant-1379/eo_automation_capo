@@ -1,0 +1,43 @@
+# Info about subsystems to be integrated
+ENMs:
+  - 'ieatenmc7a38-14.athtem.eei.ericsson.se'
+
+# Info about cloud where ECCD is installed
+openstack_auth_url: 'https://cloud15a.athtem.eei.ericsson.se:13000/v3'
+openstack_user: 'ORCH_RV_SMCCD_C15A3_admin'
+openstack_password: 'admin123'
+openstack_project_name: 'ORCH_RV_SMCCD_C15A3'
+
+container_registry_custom_user_id: admin
+container_registry_custom_pw: admin123
+
+####################################################################
+# Site values
+iam_hostname: 'iam-codeploy.rv-ccd-c15a3.athtem.eei.ericsson.se'
+vnfm_hostname: 'eo-evnfm.rv-ccd-c15a3.athtem.eei.ericsson.se'
+gas_hostname: 'gas.rv-ccd-c15a3.athtem.eei.ericsson.se'
+
+docker_registry_hostname: 'registry.rv-ccd-c15a3.athtem.eei.ericsson.se'
+helm_registry_hostname: 'helm.rv-ccd-c15a3.athtem.eei.ericsson.se'
+enable_smallstack: false
+
+registry_size: '480Gi'
+bro_size: '20Gi'
+
+syslog_ip: '10.232.220.32'
+syslog_port: 6514
+
+load_balancer_ip: '10.150.139.228'
+
+enm_scripting_cluster_ip: '10.150.168.213'
+enm_notification_ip: '10.150.168.214'
+enm_username: 'administrator'
+enm_password: 'TestPassw0rd'
+enm_connection_timeout_in_milliseconds: '20000'
+enm_scripting_ssh_port: '22'
+
+director_user: eccd
+
+storage_class: 'network-file'
+
+is_collocated_env: True

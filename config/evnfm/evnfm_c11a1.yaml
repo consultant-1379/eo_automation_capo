@@ -1,0 +1,44 @@
+# Info about subsystems to be integrated
+ENMs:
+  - "ieatenmc4a08-8.athtem.eei.ericsson.se"
+
+# Info about cloud where ECCD is installed
+openstack_auth_url: 'https://cloud11a.athtem.eei.ericsson.se:13000/'
+openstack_user: 'ORCH_PLM_HUBBLE_SMCCD_C11A1_admin'
+openstack_password: 'admin123'
+openstack_project_name: 'ORCH_PLM_HUBBLE_SMCCD_C11A1'
+container_registry_custom_user_id: admin
+container_registry_custom_pw: admin@123
+
+# Site values
+iam_hostname: 'iam.ccd-c11a1.athtem.eei.ericsson.se'
+vnfm_hostname: 'evnfm.ccd-c11a1.athtem.eei.ericsson.se'
+
+vnfm_user: 'vnfm'
+
+docker_registry_hostname: 'evnfm-registry.ccd-c11a1.athtem.eei.ericsson.se'
+helm_registry_hostname: 'evnfm-helm.ccd-c11a1.athtem.eei.ericsson.se'
+gas_hostname: 'gas.ccd-c11a1.athtem.eei.ericsson.se'
+enable_smallstack: false
+
+registry_size: '150Gi'
+bro_size: '10Gi'
+
+load_balancer_ip: '10.32.187.67'
+
+enm_scripting_cluster_ip: '131.160.200.211'
+enm_notification_ip: '131.160.200.213'
+enm_username: 'administrator'
+enm_password: 'TestPassw0rd'
+enm_connection_timeout_in_milliseconds: '20000'
+enm_scripting_ssh_port: '22'
+storage_class: 'nfs-rwx'
+
+director_user: eccd
+
+# GR Section
+gr_hostname: 'gr.ccd-c11a1.athtem.eei.ericsson.se'
+secondary_hostname: 'gr.ccd-c16c1.athtem.eei.ericsson.se'
+sftp_url: '10.150.61.15:22/eso/GR/C11C16'
+sftp_name: 'ericsson'
+sftp_password: 'ericsson'

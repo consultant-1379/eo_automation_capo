@@ -1,0 +1,7 @@
+# ANNOTATION
+# Separate controller configs are needs for ECCD purposes, when no codeploy configs
+
+# The server that is using to connect to a director VM (DO NOT CHANGE)
+host: 'some.host.name'
+user: 'user_name'
+password: '123'

@@ -1,0 +1,22 @@
+openstack_auth_url: https://cloud11a.athtem.eei.ericsson.se:13000/v3
+openstack_user: ORCH_RV_SMCCD_C11A2_admin
+openstack_password: admin123
+openstack_project_name: ORCH_RV_SMCCD_C11A2
+openstack_project_id: 0a9ba183d28e4260b585a310d18c73dd
+
+api_hostname: api.ccd-c11a2.athtem.eei.ericsson.se
+registry_hostname: container.ccd-c11a2.athtem.eei.ericsson.se
+registry_storage_size: 100Gi
+
+peer_address:
+  - 10.150.132.4
+  - 10.150.132.5
+peer-asn: 4247257098
+my-asn: 4247257108
+address-pools:
+  - 10.150.131.130-10.150.131.135
+
+cp_network: p0-opstk-11-de-cni-ggn4
+cp_subnet: p0-opstk-11-de-cni-ggn4_ipv4
+worker_network: p0-opstk-11-de-cni-ggn4
+public_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDEV0zhWNbXbuWUwpfVCgWPxz4hCidyyZXtIoZAlYej0CBeVtFF6XCDclx7Uu+GGXBGZwHn0gKKlZoxpvgLVLXibX3XYVmwkhpkoYz8gK9Aiopv/T+MWNVl9LZmDug0hkB4bAG2uMHNTSvboITzmR+Wpq1/SglW/W36xRf1/JzlvO45zl4LLpmslDDH3riv3AikyWglFuX4GvWzUgtMID+HBjUVr+M5zpZoKELC07lV73X8v4WuXS1eja+ticxuw/wtCrwI28IjhgLRfoMotpOUUB1Jwss0tsZNhzOxKGAMsK0Ccw4UF+tmNSZRCyLunggZXG5wMiC5/e47YuEkZTnh ansible-generated on ecm157x154.ete.ka.sw.ericsson.se

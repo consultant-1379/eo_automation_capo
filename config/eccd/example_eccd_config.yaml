@@ -1,0 +1,29 @@
+# Openstack info
+openstack_auth_url: ''
+openstack_user: ''
+openstack_password: ''
+openstack_project_name: ''
+
+# Cluster info
+api_hostname: ''
+registry_hostname: ''
+registry_storage_size: ''
+
+# ECFE info
+peer_address:
+  - ''
+  - ''
+peer-asn: ''
+my-asn: ''
+address-pools:
+  - ''
+
+# Networks info
+director_network: ''
+director_subnet: ''
+director_virtual_router_id: ''
+worker_network: ''
+worker_subnet: ''
+
+# Public key for passwordless access
+public_key: ''

@@ -1,0 +1,27 @@
+# General cloud information
+openstack_auth_url:
+openstack_user:
+openstack_password:
+openstack_project_name:
+
+# Cluster info
+api_hostname: apiserver-orch-eo-cmha-watchers-25108.flexilab.seli.gic.ericsson.se
+registry_hostname: cr-orch-eo-cmha-watchers-25108.flexilab.seli.gic.ericsson.se
+registry_storage_size: 128Gi
+
+# ECFE info
+peer_address:
+peer-asn:
+my-asn:
+address-pools:
+  - 214.6.0.241-214.6.0.254
+
+# Networks info
+director_network:
+director_subnet:
+director_virtual_router_id:
+worker_network:
+worker_subnet:
+
+# Public key for passwordless access
+public_key:
